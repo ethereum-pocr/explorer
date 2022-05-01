@@ -1,0 +1,18 @@
+.vscode
+
+.gitlab-ci.yml
+Dockerfile
+.dockerignore
+
+.gitignore
+
+# .gitignore stuff
+
+npm-debug.log
+node_modules
+dev/node_modules
+dist
+coverage
+.nyc_output
+.idea
+.env
