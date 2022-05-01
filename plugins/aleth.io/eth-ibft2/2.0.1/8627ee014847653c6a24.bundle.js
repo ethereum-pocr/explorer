@@ -1,0 +1,2 @@
+(window["webpackJsonp_aleth_io_ethIbft2"]=window["webpackJsonp_aleth_io_ethIbft2"]||[]).push([[1],{"9jCR":function(t){t.exports={"blockView.content.ibft2.voting":"Voting","blockView.content.ibft2.added":"Added","blockView.content.ibft2.removed":"Removed","blockView.content.ibft2.round":"Round","blockView.content.ibft2.validators":"Validators","blockView.content.ibft2.commitSeals":"CommitSeals"}}}]);
+//# sourceMappingURL=8627ee014847653c6a24.bundle.js.map
