@@ -11,8 +11,10 @@ jobs:
           node-version: '16'
       - run: npm install
       - run: npm install @alethio/cms-plugin-tool@^1.0.0-beta.5
+      - run: cd plugins/explorer-core-plugins && npm install && npm run build
       - run: APP_BASE_PATH=explorer npm run build
-      - run: npx acp install @alethio/explorer-plugin-eth-common@4.0.0 @alethio/explorer-plugin-eth-lite@4.2.0 @alethio/explorer-plugin-eth-memento@2.0.2 @alethio/explorer-plugin-eth-ibft2@2.0.1 @alethio/explorer-plugin-3box@1.1.1
+      - run: npx acp install plugins/explorer-core-plugins/packages/eth-common plugins/explorer-core-plugins/packages/eth-lite
+      - run: npx acp install @alethio/explorer-plugin-eth-memento@2.0.2 @alethio/explorer-plugin-eth-ibft2@2.0.1 @alethio/explorer-plugin-3box@1.1.1
       - run: cp config.default.json dist/config.json
       - run: cp 404.html dist/404.html
       - run: cd dist && ls -als

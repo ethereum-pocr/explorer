@@ -1,0 +1,20 @@
+{
+    "name": "@alethio/explorer-plugin-eth-lite",
+    "publisher": "aleth.io",
+    "pluginName": "eth-lite",
+    "version": "4.2.0",
+    "description": "Alethio Explorer core plugin that fetches data via Web3, directly from an ETH node",
+    "author": "Alexandru Ciuca <alexandru.ciuca@consensys.net>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Alethio/explorer-core-plugins"
+    },
+    "main": "dist/index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "engines": {
+        "@alethio/cms": "^1.0.0-beta.7"
+    }
+}

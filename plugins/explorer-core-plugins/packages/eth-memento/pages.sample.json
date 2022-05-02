@@ -1,0 +1,111 @@
+{
+    "pages": [{
+        "def": "page://aleth.io/block",
+        "children": {
+            "sidebar": [{
+                "def": "context://aleth.io/block/list",
+                "children": [
+                    { "def": "module://aleth.io/block/list" }
+                ]
+            }],
+            "content": [{
+                "def": "module://aleth.io/memento/block/basic",
+                "pageCritical": true,
+                "children": {
+                    "confirmations": [
+                        { "def": "module://aleth.io/block/confirmations" }
+                    ]
+                }
+            }, {
+                "def": "module://aleth.io/memento/block/txs",
+                "pageCritical": true
+            }, {
+                "def": "module://aleth.io/memento/block/advanced",
+                "pageCritical": true
+            }, {
+                "def": "module://aleth.io/memento/block/logs-bloom",
+                "pageCritical": true
+            }]
+        }
+    }, {
+        "def": "page://aleth.io/uncle",
+        "children": {
+            "content": [{
+                "def": "module://aleth.io/memento/uncle/details",
+                "pageCritical": true
+            }]
+        }
+    }, {
+        "def": "page://aleth.io/tx",
+        "children": {
+            "sidebar": [{
+                "def": "context://aleth.io/memento/tx/parentBlock",
+                "children": [{
+                    "def": "module://aleth.io/tx/list"
+                }]
+            }],
+            "content": [{
+                "def": "context://aleth.io/memento/tx/parentBlock",
+                "pageCritical": true,
+                "children": [{
+                    "def": "module://aleth.io/memento/tx/basic",
+                    "children": {
+                        "blockConfirmations": [{
+                            "def": "context://aleth.io/memento/tx/parentBlock",
+                            "children": [{
+                                "def": "module://aleth.io/block/confirmations"
+                            }]
+                        }]
+                    }
+                }, {
+                    "def": "module://aleth.io/memento/tx/advanced"
+                }, {
+                    "def": "module://aleth.io/memento/tx/summary"
+                }, {
+                    "def": "module://aleth.io/memento/tx/payload"
+                }]
+            }]
+        }
+    }, {
+        "def": "page://aleth.io/account",
+        "children": {
+            "top": [
+                { "def": "module://aleth.io/memento/account/details", "pageCritical": true }
+            ],
+            "bottom": [
+                { "def": "module://aleth.io/memento/account/txs" },
+                { "def": "module://aleth.io/memento/account/contract" }
+            ]
+        }
+    }, {
+        "def": "page://aleth.io/dashboard",
+        "children": {
+            "content": [
+                { "def": "module://aleth.io/search" },
+                {
+                    "def": "context://aleth.io/dashboard/latestBlockRange",
+                    "children": [
+                        {
+                            "def": "module://aleth.io/dashboard/charts",
+                            "children": {
+                                "content": [{
+                                    "def": "module://aleth.io/dashboard/blocksChart",
+                                    "children": {
+                                        "children": [
+                                            {
+                                                "def": "context://aleth.io/block/latest",
+                                                "children": [
+                                                    { "def": "module://aleth.io/dashboard/latestBlockInfo" }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }]
+}

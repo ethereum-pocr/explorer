@@ -2,7 +2,7 @@
   "name": "ethereum-lite-explorer",
   "version": "1.0.0-beta.8",
   "private": true,
-  "description": "Ethereum Lite Explorer",
+  "description": "PoCR Lite Explorer",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run clean && npm run build-js-prod && npm run check-prod-bundle-size",

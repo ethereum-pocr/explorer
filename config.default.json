@@ -117,7 +117,8 @@
                             }
                         }
                     ]
-                }
+                },
+                { "def": "module://aleth.io/dashboard/currentProviderUrl" }
             ]
         }
     }],
