@@ -1,7 +1,7 @@
 {
   "name": "ethereum-lite-explorer",
   "short_name": "ethereum-lite-explorer",
-  "description": "Ethereum Lite Explorer",
+  "description": "PoCR Lite Explorer",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
