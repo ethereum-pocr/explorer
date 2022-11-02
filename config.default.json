@@ -15,7 +15,7 @@
     }, {
         "uri": "plugin://aleth.io/eth-lite?v=4.2.0",
         "config": {
-            "nodeUrl": "wss://kerleano-ws.awnen.com/"
+            "nodeUrl": "wss://common-test.bonds.dag.ca-cib.com/clientws"
         }
     }],
 
