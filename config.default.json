@@ -15,7 +15,7 @@
     }, {
         "uri": "plugin://aleth.io/eth-lite?v=4.2.0",
         "config": {
-            "nodeUrl": "wss://common-test.bonds.dag.ca-cib.com/clientws"
+            "nodeUrl": "wss://pocrnet-test.dag.ca-cib.com/clientws/"
         }
     }],
 
