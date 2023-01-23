@@ -15,7 +15,7 @@
     }, {
         "uri": "plugin://aleth.io/eth-lite?v=4.2.0",
         "config": {
-            "nodeUrl": "wss://pocrnet-test.dag.ca-cib.com/clientws/"
+            "nodeUrl": "wss://cacib-saturn-test.francecentral.cloudapp.azure.com:9443/"
         }
     }],
 
