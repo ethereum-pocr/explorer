@@ -1,0 +1,2 @@
+(window["webpackJsonp_aleth_io_ethIbft2"]=window["webpackJsonp_aleth_io_ethIbft2"]||[]).push([[2],{"6XSq":function(t){t.exports={"blockView.content.ibft2.voting":"投票","blockView.content.ibft2.added":"添加","blockView.content.ibft2.removed":"移除","blockView.content.ibft2.round":"轮次","blockView.content.ibft2.validators":"验证者","blockView.content.ibft2.commitSeals":"授权封印"}}}]);
+//# sourceMappingURL=6179692cb3d7f4219153.bundle.js.map

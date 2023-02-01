@@ -1,0 +1,2 @@
+(window["webpackJsonp_aleth_io_3box"]=window["webpackJsonp_aleth_io_3box"]||[]).push([[2],{"9jCR":function(e){e.exports={"accountView.threeBox.name.label":"Name","accountView.threeBox.website.label":"Website","accountView.threeBox.github.label":"GitHub","accountView.threeBox.twitter.label":"Twitter","accountView.threeBox.disclaimer.label":"Data provided by {link}3box.io{/link}"}}}]);
+//# sourceMappingURL=30503f687e9f75b76c73.bundle.js.map

@@ -1,0 +1,2 @@
+(window["webpackJsonp_aleth_io_3box"]=window["webpackJsonp_aleth_io_3box"]||[]).push([[3],{"6XSq":function(e){e.exports={"accountView.threeBox.name.label":"名称","accountView.threeBox.website.label":"网页","accountView.threeBox.github.label":"GitHub","accountView.threeBox.twitter.label":"推特","accountView.threeBox.disclaimer.label":"数据由{link}3box.io{/link}提供"}}}]);
+//# sourceMappingURL=39dee59f99cd2587fa31.bundle.js.map
