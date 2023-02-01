@@ -17,19 +17,18 @@ jobs:
           npx acp install plugins/explorer-core-plugins/packages/eth-common plugins/explorer-core-plugins/packages/eth-lite
           npx acp install @alethio/explorer-plugin-eth-memento@2.0.2 @alethio/explorer-plugin-eth-ibft2@2.0.1 @alethio/explorer-plugin-3box@1.1.1
           cp config.kerleano.json dist/config.json
-          cp 404.html dist/404.html
           mv dist dist-kerleano
       - run: |
           APP_BASE_PATH=explorer/pocrnet npm run build
           npx acp install plugins/explorer-core-plugins/packages/eth-common plugins/explorer-core-plugins/packages/eth-lite
           npx acp install @alethio/explorer-plugin-eth-memento@2.0.2 @alethio/explorer-plugin-eth-ibft2@2.0.1 @alethio/explorer-plugin-3box@1.1.1
           cp config.pocrnet.json dist/config.json
-          cp 404.html dist/404.html
           mv dist dist-pocrnet
       - run: |
           mkdir dist
           mv dist-kerleano dist/kerleano
           mv dist-pocrnet dist/pocrnet
+          cp 404.html dist/404.html
           cd dist && ls -als
       - run: cd dist && ls -als
       - uses: actions/cache@v3
