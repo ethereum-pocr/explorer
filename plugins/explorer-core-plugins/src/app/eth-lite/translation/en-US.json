@@ -31,7 +31,7 @@
     "general.grid.footer.norowsavailable.label": "These are not the droids you are looking for",
 
     "dashboardView.title": "PoCR Lite Explorer",
-    "dashboardView.subTitle": "Explore the Proof of Carbon Reduction network (based on opensource Ethereum Lite Explorer)",
+    "dashboardView.subTitle": "Explore the Proof of Climate awaReness network (based on opensource Ethereum Lite Explorer)",
 
     "blockView.content.noData.text": "It seems there is no data to display. <br /> Try searching for a different block.",
     "blockView.content.dataNotLoaded.text": "Data is still being processed. Please be patient",
