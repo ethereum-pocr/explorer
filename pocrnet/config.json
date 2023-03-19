@@ -56,6 +56,17 @@
             }]
         }
     }, {
+        "def": "page://aleth.io/lite/token",
+        "children": {
+            "top": [
+                { "def": "module://aleth.io/lite/account/address", "pageCritical": true },
+                { "def": "module://aleth.io/lite/token/details", "pageCritical": true }
+            ],
+            "transfer": [
+                { "def": "module://aleth.io/lite/token/transfers", "pageCritical": false }
+            ]
+        }
+    }, {
         "def": "page://aleth.io/tx",
         "children": {
             "sidebar": [{
@@ -92,6 +103,10 @@
             "top": [
                 { "def": "module://aleth.io/lite/account/details", "pageCritical": true }
             ],
+            "token": [
+                { "def": "module://aleth.io/lite/token/details", "pageCritical": true }
+            ],
+
             "bottom": [
                 { "def": "module://aleth.io/lite/account/contract" }
             ]
