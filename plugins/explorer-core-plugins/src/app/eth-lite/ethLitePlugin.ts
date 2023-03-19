@@ -24,6 +24,8 @@ import { AlethioAdapterType } from "app/shared/adapter/AlethioAdapterType";
 import { uncleByIndexContextType } from "app/eth-lite/context/uncleByIndexContextType";
 import { EthLitePluginConfig } from "app/eth-lite/EthLitePluginConfig";
 import { CurrentProviderUrlAdapter } from "app/shared/adapter/CurrentProviderUrlAdapter";
+import { TokenDetailsAdapter } from "app/eth-lite/data/erc20/TokenDetailsAdapter";
+import { tokenDetailsModule } from "app/eth-lite/module/erc20/tokenDetailsModule";
 
 const ethLitePlugin: IPlugin = {
     init(configData: unknown, api, logger, publicPath) {
@@ -67,8 +69,10 @@ const ethLitePlugin: IPlugin = {
 
         api.addDataAdapter("adapter://aleth.io/lite/account/details", new AccountDetailsAdapter(dataSource));
         api.addDataAdapter("adapter://aleth.io/lite/account/balance", new AccountBalanceAdapter(dataSource));
+        api.addDataAdapter("adapter://aleth.io/lite/token/details", new TokenDetailsAdapter(dataSource));
         api.addModuleDef("module://aleth.io/lite/account/details", accountDetailsModule(ethSymbol));
         api.addModuleDef("module://aleth.io/lite/account/contract", accountContractModule);
+        api.addModuleDef("module://aleth.io/lite/token/details", tokenDetailsModule());
     },
 
     getAvailableLocales() {

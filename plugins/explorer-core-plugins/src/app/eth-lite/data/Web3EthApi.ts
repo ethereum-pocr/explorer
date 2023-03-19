@@ -8,6 +8,10 @@ export class Web3EthApi {
         this.web3Eth = web3Eth;
     }
 
+    getWeb3Provider() {
+        return this.web3Eth.currentProvider
+    }
+
     async getBlock(blockNumber: number) {
         return (await this.web3Eth.getBlock(blockNumber, true)) || void 0;
     }
@@ -77,4 +81,5 @@ export class Web3EthApi {
     async getPeerCount() {
         return (await this.web3Eth.net.getPeerCount());
     }
+
 }

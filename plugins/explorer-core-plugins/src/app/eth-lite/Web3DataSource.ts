@@ -14,6 +14,7 @@ import { EthLitePluginConfig } from "app/eth-lite/EthLitePluginConfig";
 import { when } from "mobx";
 import { IAuthStore } from "app/eth-lite/IAuthStore";
 import { ILogger } from "plugin-api";
+import { TokenDetailsApi } from "app/eth-lite/data/erc20/TokenDetailsApi";
 
 interface IWeb3DataStores {
     blockStateStore: BlockStateStore;
@@ -24,6 +25,7 @@ interface IWeb3DataStores {
     txReceiptStore: TxReceiptStore;
     accountDetailsApi: AccountDetailsApi;
     accountBalanceApi: AccountBalanceApi;
+    tokenDetailsApi: TokenDetailsApi;
     search: Search;
 }
 
