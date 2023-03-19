@@ -30,6 +30,8 @@ import { tokenPage } from "app/eth-lite/page/tokenPage";
 import { TokenTransfersAdapter } from "app/eth-lite/data/erc20/TokenTransfersAdapter";
 import { tokenTransfersModule } from "app/eth-lite/module/erc20/tokenTransfersModule";
 import { accountAddressModule } from "app/shared/module/account/lite/accountAddressModule";
+import { AccountTokenTransfersAdapter } from "app/eth-lite/data/erc20/AccountTokenTransfersAdapter";
+import { accountTokenTransfersModule } from "app/eth-lite/module/erc20/accountTokenTransfersModule";
 
 const ethLitePlugin: IPlugin = {
     init(configData: unknown, api, logger, publicPath) {
@@ -77,11 +79,14 @@ const ethLitePlugin: IPlugin = {
         api.addDataAdapter("adapter://aleth.io/lite/account/balance", new AccountBalanceAdapter(dataSource));
         api.addDataAdapter("adapter://aleth.io/lite/token/details", new TokenDetailsAdapter(dataSource));
         api.addDataAdapter("adapter://aleth.io/lite/token/transfers", new TokenTransfersAdapter(dataSource));
+        api.addDataAdapter("adapter://aleth.io/lite/account/transfers", new AccountTokenTransfersAdapter(dataSource));
+
         api.addModuleDef("module://aleth.io/lite/account/address", accountAddressModule());
         api.addModuleDef("module://aleth.io/lite/account/details", accountDetailsModule(ethSymbol));
         api.addModuleDef("module://aleth.io/lite/account/contract", accountContractModule);
         api.addModuleDef("module://aleth.io/lite/token/details", tokenDetailsModule());
         api.addModuleDef("module://aleth.io/lite/token/transfers", tokenTransfersModule());
+        api.addModuleDef("module://aleth.io/lite/account/transfers", accountTokenTransfersModule());
 
     },
 

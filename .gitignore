@@ -8,5 +8,5 @@ coverage
 config.jsonc
 config.json
 config.dev.jsonc
-config.dev.json
+#config.dev.json
 config.deploy.json

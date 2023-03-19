@@ -4,6 +4,7 @@ import { Contract } from "web3-eth-contract";
 import { Web3EthApi } from "app/eth-lite/data/Web3EthApi";
 import { ITokenDetails, ITokenFilter, ITokenTransferEvents } from "app/eth-lite/data/erc20/ITokenTypes";
 import { ERC20Abi } from "app/eth-lite/data/erc20/ERC20Abi";
+import { BigNumber } from "app/util/BigNumber";
 
 const nohex =  (a: string) => `${a.replace(/^0x/, "")}`;
 const hex =  (a: string) => `0x${nohex(a)}`;
@@ -14,6 +15,18 @@ export class TokenDetailsApi {
         private web3EthApi: Web3EthApi
     ) {
         this.abi = ERC20Abi;
+    }
+
+    async fetchTokenBalance(tokenAddress: string, account: string): Promise<BigNumber> {
+        let address = hex(tokenAddress);
+
+        const token = new Contract(this.web3EthApi.getWeb3Provider(), this.abi);
+        token.address = address;
+        try {
+            return await token.methods.balanceOf(hex(account)).call({from: hex(account)});
+        } catch (error) {
+            return new BigNumber(0);
+        }
     }
 
     async fetchDetails(tokenAddress: string): Promise<ITokenDetails> {
@@ -29,6 +42,7 @@ export class TokenDetailsApi {
         try {
         // the calls could generate an execption if the undelying smart contract does not really support ERC20 calls
             const details: ITokenDetails = {
+                address,
                 name: await token.methods.name().call(),
                 symbol: await token.methods.symbol().call(),
                 decimals: await token.methods.decimals().call(),
@@ -37,7 +51,7 @@ export class TokenDetailsApi {
 
             return details;
         } catch (error) {
-            return {name: undefined, symbol: undefined, decimals: 0, totalSupply: undefined};
+            return {address, name: undefined, symbol: undefined, decimals: 0, totalSupply: undefined};
         }
     }
 

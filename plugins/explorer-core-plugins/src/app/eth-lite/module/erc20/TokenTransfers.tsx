@@ -29,7 +29,7 @@ export class TokenTransfers extends React.Component<ITokenTransfersProps> {
                             <Label>To</Label>
                             <AddressHashBox>{event.to}</AddressHashBox>
                             <Label>Value</Label>
-                            <ValueBox>{event.value.toString(16)}</ValueBox>
+                            <ValueBox>{event.value.toString(10)}</ValueBox>
                             <Label>Tx</Label>
                             <TxHashBox>{event.transactionHash}</TxHashBox>
                         </LayoutRowItem>

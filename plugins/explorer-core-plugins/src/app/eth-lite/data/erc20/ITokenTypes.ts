@@ -1,6 +1,7 @@
 import { BigNumber } from "app/util/BigNumber";
 
 export interface ITokenDetails {
+    address: string;
     name?: string;
     symbol?: string;
     /** Assumed to be 0 if missing */
@@ -32,5 +33,15 @@ export interface ITokenTransferEvent {
 
 export interface ITokenTransferEvents {
     events: ITokenTransferEvent[];
+    filter: ITokenFilter;
+}
+
+export interface IAccountTokenTransfers {
+    tokens: {
+        details: ITokenDetails;
+        events: ITokenTransferEvent[];
+        balance: BigNumber;
+        calculatedBalance: BigNumber;
+    }[];
     filter: ITokenFilter;
 }
