@@ -2,7 +2,7 @@
 import { IModuleDef } from "plugin-api/IModuleDef";
 import { IAccountContext } from "app/shared/context/IAccountContext";
 import { accountContextType } from "app/shared/context/accountContextType";
-import { ITokenDetails } from "app/eth-lite/data/erc20/ITokenDetails";
+import { ITokenDetails } from "app/eth-lite/data/erc20/ITokenTypes";
 import { ITranslation } from "plugin-api/ITranslation";
 import { ILogger } from "plugin-api/ILogger";
 import { TokenDetails } from "app/eth-lite/module/erc20/TokenDetails";
@@ -14,7 +14,6 @@ export interface ITokenDetailsProps {
     locale: string;
     logger: ILogger;
 }
-
 
 export const tokenDetailsModule: () => IModuleDef<ITokenDetailsProps, IAccountContext> =
 () => ({
@@ -40,5 +39,3 @@ export const tokenDetailsModule: () => IModuleDef<ITokenDetailsProps, IAccountCo
         return props;
     }
 });
-
-

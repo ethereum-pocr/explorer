@@ -20,7 +20,6 @@ export interface IAccountPageTemplateProps extends IPageTemplateProps<AccountPag
 export class AccountPageTemplate extends React.Component<IAccountPageTemplateProps> {
     render() {
         let { slots } = this.props;
-
         return (
             <Container>
                 <Sidebar sticky mobileVisible={this.props.sidebarVisible}>
@@ -36,6 +35,7 @@ export class AccountPageTemplate extends React.Component<IAccountPageTemplatePro
                 <Content>
                     { slots && slots[AccountPageSlotType.Top] }
                     { slots && slots[AccountPageSlotType.Balance] }
+                    { slots && slots[AccountPageSlotType.Token] }
                     <Spacer height="10px" />
                     { slots && (slots[AccountPageSlotType.Bottom] || []).map((s, i) => <React.Fragment key={i}>
                         <Spacer height="48px" />

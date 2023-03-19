@@ -9,7 +9,7 @@ export class Web3EthApi {
     }
 
     getWeb3Provider() {
-        return this.web3Eth.currentProvider
+        return this.web3Eth.currentProvider;
     }
 
     async getBlock(blockNumber: number) {

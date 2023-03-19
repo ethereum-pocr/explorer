@@ -15,7 +15,7 @@ export const accountPage: IPageDef<AccountPageSlotType, IAccountPageContext> = {
         "/address/:accountHash": params => `/account/0x${params.accountHash.replace(/^0x/, "")}`,
         "/Account_:accountHash": params => `/account/0x${params.accountHash.replace(/^0x/, "")}`,
         "/account/:accountHash([a-fA-F0-9]+)": params => `/account/0x${params.accountHash}`,
-        "/account/0x:accountHash([a-fA-F0-9]+)": params => ({ accountHash: params.accountHash }),
+        "/account/0x:accountHash([a-fA-F0-9]+)": params => ({ accountHash: params.accountHash })
     },
     buildCanonicalUrl: ({ accountHash }) => `/account/0x${accountHash.replace(/^0x/, "")}`,
     getPageTemplate: () => AccountPageTemplate,
@@ -27,5 +27,3 @@ export const accountPage: IPageDef<AccountPageSlotType, IAccountPageContext> = {
         </ErrorBox>;
     }
 };
-
-console.log("Declaring the accountPage", accountPage);

@@ -26,6 +26,10 @@ import { EthLitePluginConfig } from "app/eth-lite/EthLitePluginConfig";
 import { CurrentProviderUrlAdapter } from "app/shared/adapter/CurrentProviderUrlAdapter";
 import { TokenDetailsAdapter } from "app/eth-lite/data/erc20/TokenDetailsAdapter";
 import { tokenDetailsModule } from "app/eth-lite/module/erc20/tokenDetailsModule";
+import { tokenPage } from "app/eth-lite/page/tokenPage";
+import { TokenTransfersAdapter } from "app/eth-lite/data/erc20/TokenTransfersAdapter";
+import { tokenTransfersModule } from "app/eth-lite/module/erc20/tokenTransfersModule";
+import { accountAddressModule } from "app/shared/module/account/lite/accountAddressModule";
 
 const ethLitePlugin: IPlugin = {
     init(configData: unknown, api, logger, publicPath) {
@@ -62,6 +66,8 @@ const ethLitePlugin: IPlugin = {
                 ethSymbol
             }));
 
+        api.addPageDef("page://aleth.io/lite/token", tokenPage);
+
         api.addContextDef("context://aleth.io/lite/tx/parentBlock", txParentBlockContext);
         api.addDataAdapter("adapter://aleth.io/lite/tx/details", new TxDetailsAdapter(dataSource));
         api.addDataAdapter("adapter://aleth.io/lite/tx/receipt", new TxReceiptAdapter(dataSource));
@@ -70,9 +76,13 @@ const ethLitePlugin: IPlugin = {
         api.addDataAdapter("adapter://aleth.io/lite/account/details", new AccountDetailsAdapter(dataSource));
         api.addDataAdapter("adapter://aleth.io/lite/account/balance", new AccountBalanceAdapter(dataSource));
         api.addDataAdapter("adapter://aleth.io/lite/token/details", new TokenDetailsAdapter(dataSource));
+        api.addDataAdapter("adapter://aleth.io/lite/token/transfers", new TokenTransfersAdapter(dataSource));
+        api.addModuleDef("module://aleth.io/lite/account/address", accountAddressModule());
         api.addModuleDef("module://aleth.io/lite/account/details", accountDetailsModule(ethSymbol));
         api.addModuleDef("module://aleth.io/lite/account/contract", accountContractModule);
         api.addModuleDef("module://aleth.io/lite/token/details", tokenDetailsModule());
+        api.addModuleDef("module://aleth.io/lite/token/transfers", tokenTransfersModule());
+
     },
 
     getAvailableLocales() {

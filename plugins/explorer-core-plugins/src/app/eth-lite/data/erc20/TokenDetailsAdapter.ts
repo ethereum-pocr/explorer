@@ -4,7 +4,7 @@ import { LatestBlockWatcher } from "app/shared/adapter/block/LatestBlockWatcher"
 import { accountContextType } from "app/shared/context/accountContextType";
 import { IAccountContext } from "app/shared/context/IAccountContext";
 import { Web3DataSource } from "app/eth-lite/Web3DataSource";
-import { ITokenDetails } from "app/eth-lite/data/erc20/ITokenDetails";
+import { ITokenDetails } from "app/eth-lite/data/erc20/ITokenTypes";
 
 export class TokenDetailsAdapter implements IDataAdapter<IAccountContext, ITokenDetails> {
     contextType = accountContextType;
@@ -23,7 +23,7 @@ export class TokenDetailsAdapter implements IDataAdapter<IAccountContext, IToken
             return void 0;
         }
 
-        return await this.dataSource.stores.tokenDetailsApi.fetch(accountHash);
+        return await this.dataSource.stores.tokenDetailsApi.fetchDetails(accountHash);
     }
 
     createWatcher() {
