@@ -104,7 +104,8 @@
                 { "def": "module://aleth.io/lite/account/details", "pageCritical": true }
             ],
             "token": [
-                { "def": "module://aleth.io/lite/token/details", "pageCritical": true }
+                { "def": "module://aleth.io/lite/token/details", "pageCritical": true },
+                { "def": "module://aleth.io/lite/account/transfers", "pageCritical": false }
             ],
 
             "bottom": [
