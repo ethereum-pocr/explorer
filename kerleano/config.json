@@ -15,7 +15,13 @@
     }, {
         "uri": "plugin://aleth.io/eth-lite?v=4.2.0",
         "config": {
+            "ethSymbol": "CRC",
             "nodeUrl": "wss://cacib-saturn-test.francecentral.cloudapp.azure.com:9443/"
+        },
+        "translations": {
+            "en-US": {
+                "dashboardView.title": "Proof of Climate awaReness (Kerleano testnet)"
+            }
         }
     }],
 
