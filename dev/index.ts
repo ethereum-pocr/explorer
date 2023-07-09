@@ -8,6 +8,7 @@ import { AddressInfo } from "net";
 const basePath = process.env.APP_BASE_PATH ?
     "/" + process.env.APP_BASE_PATH.replace(/^\//, "").replace(/\/$/, "") + "/" :
     "/";
+console.log("Starting with basePath = ", basePath);
 
 let app = express();
 
@@ -21,7 +22,7 @@ app.get(`${basePath}config.json`, (req, res) => {
 
 app.use(basePath, express.static(path.resolve("../dist")));
 
-app.use(`${basePath}plugins`, express.static(path.resolve("../dist/plugins"), { fallthrough: false }));
+app.use(`${basePath}plugins`, express.static(path.resolve("../plugins/dist"), { fallthrough: false }));
 
 // Fallback for HTML 5 routing
 app.use(`${basePath}*`, (req, res) => res.sendFile(path.resolve("../dist/index.html")));
