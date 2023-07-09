@@ -68,6 +68,7 @@
     "@alethio/cms-plugin-tool": "^1.0.0-beta.5",
     "@alethio/explorer-ui": "^1.0.0-beta.2",
     "@alethio/ui": "^1.1.0",
+    "@microsoft/applicationinsights-web": "^3.0.2",
     "@puzzl/browser": "^1.0.0-beta.2",
     "@puzzl/core": "^1.0.0-beta.1",
     "@sentry/browser": "^4.4.0",

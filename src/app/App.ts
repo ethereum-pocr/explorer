@@ -9,6 +9,7 @@ import { UserPreferences } from "app/UserPreferences";
 import { HttpRequest } from "@puzzl/browser/lib/network/HttpRequest";
 import { GoogleAnalytics } from "app/util/GoogleAnalytics";
 import { Hotjar } from "app/util/Hotjar";
+import { trackPageView } from "app/util/track"
 
 export class App {
     async init(target: HTMLElement) {
@@ -39,7 +40,7 @@ export class App {
         if (hjId) {
             new Hotjar(hjId).init();
         }
-
+        trackPageView();
         onReactionError((e) => {
             logger.error(e);
         });
