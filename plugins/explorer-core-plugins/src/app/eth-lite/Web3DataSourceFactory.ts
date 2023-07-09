@@ -13,6 +13,7 @@ import { TxReceiptStoreFactory } from "app/eth-lite/data/tx/receipt/TxReceiptSto
 import { AccountBalanceApi } from "app/eth-lite/data/account/AccountBalanceApi";
 import { AccountDetailsApi } from "app/eth-lite/data/account/AccountDetailsApi";
 import { AccountDetailsReader } from "app/eth-lite/data/account/AccountDetailsReader";
+import { TokenDetailsApi } from "app/eth-lite/data/erc20/TokenDetailsApi";
 
 export class Web3DataSourceFactory {
     create(config: EthLitePluginConfig, logger: ILogger) {
@@ -31,6 +32,7 @@ export class Web3DataSourceFactory {
 
         let accountBalanceApi = new AccountBalanceApi(web3EthApi);
         let accountDetailsApi = new AccountDetailsApi(web3EthApi, new AccountDetailsReader());
+        let tokenDetailsApi = new TokenDetailsApi(web3EthApi);
 
         let search = new SearchFactory(web3EthApi).create(blockStateStore);
 
@@ -48,6 +50,7 @@ export class Web3DataSourceFactory {
                 txReceiptStore,
                 accountBalanceApi,
                 accountDetailsApi,
+                tokenDetailsApi,
                 search
             }
         );

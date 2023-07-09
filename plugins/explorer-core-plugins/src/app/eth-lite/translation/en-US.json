@@ -53,6 +53,10 @@
     "blockView.content.transactionsHighlight.value.label": "Value",
     "txTooltip.value.label": "Value",
 
+    "tokenView.sidebar.logo": "TOK",
+    "tokenView.sidebar.title": "Token page",
+    "tokenView.content.noData.text": "It seems there is no data to display. <br /> Try searching for a different token.",
+
     "uncleView.sidebar.logo": "Un",
     "uncleView.sidebar.title": "Uncle page",
     "uncleView.content.uncleNumber.label": "Uncle",
