@@ -16,7 +16,7 @@
         "uri": "plugin://aleth.io/eth-lite?v=4.2.0",
         "config": {
             "ethSymbol": "CRC",
-            "nodeUrl": "wss://cacib-saturn-test.francecentral.cloudapp.azure.com:9443/"
+            "nodeUrl": "wss://rpc1.kerleano.dag.groups.id/ws"
         },
         "translations": {
             "en-US": {
