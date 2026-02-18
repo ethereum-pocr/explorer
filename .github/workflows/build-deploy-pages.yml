@@ -2,16 +2,17 @@ name: deploy-github-pages
 on: [push]
 jobs:
   compile-build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - run: echo displaying the cache key vue-build-result-${{ github.ref_name }}-${{ github.sha }}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - run: npm install
+      - run: which bzip2 || apt-get install -y bzip2
+      - run: npm ci
       - run: npm install @alethio/cms-plugin-tool@^1.0.0-beta.5
-      - run: cd plugins/explorer-core-plugins && npm install && npm run build
+      - run: cd plugins/explorer-core-plugins && npm ci && npm run build
       - run: |
           APP_BASE_PATH=explorer/kerleano npm run build
           npx acp install plugins/explorer-core-plugins/packages/eth-common plugins/explorer-core-plugins/packages/eth-lite
