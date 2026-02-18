@@ -16,7 +16,7 @@
         "uri": "plugin://aleth.io/eth-lite?v=4.2.0",
         "config": {
             "ethSymbol": "CRC",
-            "nodeUrl": "wss://rpc1.kerleano.dag.groups.id/ws"
+            "nodeUrl": "wss://rpc1.kerleano.ca-dag.work/ws"
         },
         "translations": {
             "en-US": {
