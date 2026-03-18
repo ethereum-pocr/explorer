@@ -16,7 +16,7 @@
         "uri": "plugin://aleth.io/eth-lite?v=4.2.0",
         "config": {
             "ethSymbol": "CRC",
-            "nodeUrl": "wss://pocrnet.westeurope.cloudapp.azure.com/ws"
+            "nodeUrl": "wss://rpc1.pocrnet.ca-dag.work/ws"
         },
         "translations": {
             "en-US": {
